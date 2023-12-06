@@ -1,0 +1,15 @@
+[workspace]
+
+members = [
+    "branches",
+    "data-types",
+    "enumerations",
+    "functions",
+    "guessing-game",
+    "learn-modules",
+    "ownerships",
+    "string",
+    "structs",
+    "variables",
+    "vector",
+]
