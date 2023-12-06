@@ -43,6 +43,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "hashmap"
+version = "0.1.0"
+
+[[package]]
 name = "learn-modules"
 version = "0.1.0"
 
