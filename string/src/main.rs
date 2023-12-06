@@ -1,6 +1,9 @@
-use std::io;
+
 
 fn main() {
-    println!("Hello, world!");
+    let mut s = String::new();
 
+    s = "initial content".to_string();
+
+    println!("string is {}", s);
 }
