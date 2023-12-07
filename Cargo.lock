@@ -21,6 +21,10 @@ name = "enumerations"
 version = "0.1.0"
 
 [[package]]
+name = "error-handling"
+version = "0.1.0"
+
+[[package]]
 name = "functions"
 version = "0.1.0"
 

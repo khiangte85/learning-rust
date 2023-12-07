@@ -12,5 +12,6 @@ members = [
     "structs",
     "variables",
     "vector",
-    "hashmap"
+    "hashmap",
+    "error-handling",
 ]
