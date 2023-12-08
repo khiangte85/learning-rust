@@ -15,4 +15,5 @@ members = [
     "hashmap",
     "error-handling",
     "generics",
+    "traits",
 ]
