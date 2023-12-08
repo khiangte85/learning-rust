@@ -48,6 +48,7 @@ fn main() {
 
     let p1 = Point { x: 20, y: 40 };
     println!("x value is: {}", p1.x());
+    println!("y value is: {}", p1.y);
     println!("Point value is: {:?}", p1);
 
     let p2 = MixPoint { x: 12, y: 5.9 };
