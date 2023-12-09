@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 pub trait Summary {
     fn author(&self) -> String;
 
@@ -36,6 +38,13 @@ impl Summary for Tweet {
 }
 
 pub fn notify<T: Summary>(item: &T) {
+    println!("{} - {}", item.summarize(), item.author());
+}
+
+pub fn notify1<T>(item: &T)
+where
+    T: Summary + Display,
+{
     println!("{} - {}", item.summarize(), item.author());
 }
 
