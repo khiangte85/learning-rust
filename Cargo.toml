@@ -16,4 +16,5 @@ members = [
     "error-handling",
     "generics",
     "traits",
+    "lifetime",
 ]
