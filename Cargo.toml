@@ -20,3 +20,4 @@ members = [
     "tests",
     "minigrep",
 ]
+resolver="2"
