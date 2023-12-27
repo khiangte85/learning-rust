@@ -69,6 +69,10 @@ name = "lifetime"
 version = "0.1.0"
 
 [[package]]
+name = "minigrep"
+version = "0.1.0"
+
+[[package]]
 name = "ownerships"
 version = "0.1.0"
 
