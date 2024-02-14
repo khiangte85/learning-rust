@@ -31,6 +31,11 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let mut results = Vec::new();
 
+    println!(
+        "Searching for text '{}' in \n\n{}\n\n and the results are \n",
+        query, contents
+    );
+
     for line in contents.lines() {
         if line.to_lowercase().contains(&query.to_lowercase()) {
             results.push(line)
@@ -38,4 +43,20 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     }
 
     results
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn search_word() {
+        let query = "safe";
+        let contents = "\
+Rust:
+safe, fast, productive.
+Pick three.";
+
+        assert_eq!(vec!["safe, fast, productive."], search(query, contents));
+    }
 }
