@@ -19,5 +19,6 @@ members = [
     "lifetime",
     "tests",
     "minigrep",
+    "closure"
 ]
 resolver="2"
