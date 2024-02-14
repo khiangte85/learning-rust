@@ -1,5 +1,5 @@
 fn main() {
-    let r;
+    let r: &i32;
 
     // x goes out of scope, so r points to object no longer exist
     // {
@@ -8,20 +8,20 @@ fn main() {
     // }
 
     // this works
-    let x = 5;
+    let x: i32 = 5;
     r = &x;
 
     println!("{}", r);
 
-    let first = String::from("hello");
-    let second = "rust";
+    let first: String = String::from("hello");
+    let second: &str = "rust";
 
-    let result = longest(&first.as_str(), &second);
+    let result: &str = longest(&first.as_str(), &second);
     println!("Longest word is: {}", result);
 
     {
-        let second = String::from("second");
-        let result = longest(first.as_str(), second.as_str());
+        let second: String = String::from("second");
+        let result: &str = longest(first.as_str(), second.as_str());
         println!("Longest word is: {}", result);
     }
 
@@ -32,9 +32,9 @@ fn main() {
     println!("Longest word is: {}", result1);
 }
 
-struct Excerpt<'a> {
-    part: &'a str,
-}
+// struct Excerpt<'a> {
+//     part: &'a str,
+// }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
