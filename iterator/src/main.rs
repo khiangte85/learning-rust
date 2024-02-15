@@ -1,6 +1,4 @@
 
-use iterator::{shoes_size};
-
 fn main() {
     let v1 = vec![1, 2, 3];
 

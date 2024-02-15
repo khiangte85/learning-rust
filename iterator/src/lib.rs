@@ -28,4 +28,25 @@ mod tests {
             shoes_size(shoes, 10)
         );
     }
+
+    #[test]
+    fn iterator_demonstration() {
+        let v1 = vec![1, 2, 3];
+        let mut iter = v1.iter();
+
+        assert_eq!(iter.next(), Some(&1));
+        assert_eq!(iter.next(), Some(&2));
+        assert_eq!(iter.next(), Some(&3));
+        assert_eq!(iter.next(), None);
+    }
+
+    #[test]
+    fn iterator_sum() {
+        let v1: i32 = vec![1, 2, 3, 4].iter().sum();
+        // let iter = v1.iter();
+        // let total: i32 = iter.sum();
+        // assert_eq!(total, 10);
+
+        assert_eq!(v1, 10);
+    }
 }
