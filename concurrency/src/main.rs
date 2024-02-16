@@ -1,4 +1,4 @@
-use std::{sync::mpsc, thread, time::Duration};
+use std::{sync::{mpsc, Arc, Mutex}, thread::{self, JoinHandle}, time::Duration, vec};
 
 fn main() {
     let handle = thread::spawn(|| {
@@ -23,6 +23,8 @@ fn main() {
 
     handle.join().unwrap();
 
+
+    // Channel
     let (tx, rx) = mpsc::channel();
 
     thread::spawn(move || {
@@ -67,4 +69,37 @@ fn main() {
     for val in rx {
         println!("Received :  {}", val);
     }
+
+    // Mutex
+    let m = Mutex::new(5);
+
+    {
+        let mut num = m.lock().unwrap();
+        *num = 6;
+    }
+
+    println!("m = {:?}", m);
+
+    let counter = Arc::new(Mutex::new(0));
+
+    let mut handles = vec![];
+
+    for _ in 0..10{
+        let counter = Arc::clone(&counter);
+
+        let handle = thread::spawn(move || {
+            let mut m = counter.lock().unwrap();
+
+            *m += 1;
+        });
+
+        handles.push(handle);
+    }
+
+    for handle in handles{
+        handle.join().unwrap();
+    }
+
+    println!("Shared mutated value: {:?}", *counter.lock().unwrap());
+
 }
