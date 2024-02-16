@@ -107,6 +107,11 @@ mod ref_cell_tests {
     impl Messenger for MockMessenger {
         fn send(&self, message: &str) {
             self.messages_count.borrow_mut().push(String::from(message));
+
+            // Violate borrow: cant have two mutable borrow at the same time
+            let mut first_borrow = self.messages_count.borrow_mut();
+            let mut second_borrow = self.messages_count.borrow_mut();
+
         }
     }
 

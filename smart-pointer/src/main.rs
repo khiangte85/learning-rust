@@ -28,12 +28,12 @@ fn main() {
 
     println!("count after creating a = {}", Rc::strong_count(&a));
 
-    let b = Cons(6, Rc::clone(&a));
+    let _b = Cons(6, Rc::clone(&a));
 
     println!("count after creating b = {}", Rc::strong_count(&a));
 
     {
-        let c = Cons(7, Rc::clone(&a));
+        let _c = Cons(7, Rc::clone(&a));
         println!("count after creating c = {}", Rc::strong_count(&a));
     }
 
@@ -58,5 +58,5 @@ fn main() {
 
     let mut x = 5;
 
-    let y = &mut x;
+    let _y = &mut x;
 }
