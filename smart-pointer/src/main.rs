@@ -54,4 +54,9 @@ fn main() {
 
     // Early drop
     drop(c1);
+
+
+    let mut x = 5;
+
+    let y = &mut x;
 }
