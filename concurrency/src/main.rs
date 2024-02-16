@@ -1,4 +1,6 @@
-use std::{sync::{mpsc, Arc, Mutex}, thread::{self, JoinHandle}, time::Duration, vec};
+use std::sync::{mpsc, Arc, Mutex};
+use std::thread;
+use std::time::Duration;
 
 fn main() {
     let handle = thread::spawn(|| {
@@ -62,7 +64,7 @@ fn main() {
 
         for val in vals {
             tx1.send(val).unwrap();
-            thread::sleep(Duration::from_secs(1));
+            thread::sleep(Duration::from_millis(10));
         }
     });
 
