@@ -24,7 +24,8 @@ members = [
     "smart-pointer",
     "concurrency",
     "oop",
-    "oop_gui"
+    "oop_gui",
+    "pattern_matching"
 ]
 
 resolver="2"
