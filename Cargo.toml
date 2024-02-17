@@ -22,7 +22,8 @@ members = [
     "closure",
     "iterator",
     "smart-pointer",
-    "concurrency"
+    "concurrency",
+    "oop",
 ]
 
 resolver="2"
