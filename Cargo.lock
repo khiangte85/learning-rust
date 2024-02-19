@@ -7,6 +7,10 @@ name = "advance_trait"
 version = "0.1.0"
 
 [[package]]
+name = "advanced_function"
+version = "0.1.0"
+
+[[package]]
 name = "branches"
 version = "0.1.0"
 
