@@ -1,4 +1,4 @@
-use std::ops::Add;
+use std::{fmt::Display, ops::Add};
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 struct Point {
@@ -68,19 +68,26 @@ trait Animal {
 
 struct Dog;
 
-impl Dog{
-    fn baby_name() -> String{
+impl Dog {
+    fn baby_name() -> String {
         String::from("Spot")
     }
 }
 
-impl Animal for Dog{
+impl Animal for Dog {
     fn baby_name() -> String {
         String::from("Puppies")
     }
 }
 
+//  Newtype pattern
+struct Wrapper(Vec<String>);
 
+impl Display for Wrapper {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "[{}]", self.0.join(", "))
+    }
+}
 
 fn main() {
     let p1 = Point { x: 10, y: 5 };
@@ -102,8 +109,11 @@ fn main() {
     Pilot::fly(&human);
     Wizard::fly(&human);
 
-
-    println!("My dog name is {}", Dog::baby_name() );
+    println!("My dog name is {}", Dog::baby_name());
     //  fully qualified syntax <Type as Trait>::function_name()
-    println!("A baby dog is called {}", <Dog as Animal>::baby_name() );
+    println!("A baby dog is called {}", <Dog as Animal>::baby_name());
+
+    let w = Wrapper(vec![String::from("hello"), String::from("world")]);
+
+    println!("arr = {}", w);
 }
