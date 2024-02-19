@@ -25,7 +25,8 @@ members = [
     "concurrency",
     "oop",
     "oop_gui",
-    "pattern_matching"
+    "pattern_matching",
+    "unsafe_rust"
 ]
 
 resolver="2"
