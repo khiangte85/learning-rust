@@ -28,7 +28,8 @@ members = [
     "pattern_matching",
     "unsafe_rust",
     "advance_trait",
-    "advance_function"
+    "advance_function",
+    "web_server",
 ]
 
 resolver="2"
