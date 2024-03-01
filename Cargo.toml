@@ -30,6 +30,7 @@ members = [
     "advance_trait",
     "advance_function",
     "web_server",
+    "rayon_multithreading",
 ]
 
 resolver="2"
